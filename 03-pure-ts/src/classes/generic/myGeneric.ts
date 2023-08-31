@@ -30,3 +30,17 @@ identityThree<Bootle>({
   brand: "Aqua",
   type: 3,
 });
+
+// generic with array
+function getSearchProducts<T>(products: Array<T>): T {
+  // do some database operation
+  const myIndex = 3;
+  return products[myIndex];
+}
+
+// with arrow function
+const getMoreSearchProducts = <T>(products: Array<T>): T => {
+  // do some database operation
+  const myIndex = 4;
+  return products[myIndex];
+};
