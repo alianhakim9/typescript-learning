@@ -1,3 +1,5 @@
+import TakePhoto from "../interfaces/TakePhoto";
+
 class Youtube implements TakePhoto, Story {
   constructor(
     public cameraMode: string,
