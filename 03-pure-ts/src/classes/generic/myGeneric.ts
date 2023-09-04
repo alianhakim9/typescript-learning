@@ -44,3 +44,46 @@ const getMoreSearchProducts = <T>(products: Array<T>): T => {
   const myIndex = 4;
   return products[myIndex];
 };
+
+interface DBConnection {
+  url: string;
+  name: string;
+  port: number;
+}
+
+// generic classes
+function anotherFunction<T, U extends DBConnection>(
+  valOne: T,
+  valTwo: U
+): object {
+  return {
+    valOne,
+    valTwo,
+  };
+}
+
+anotherFunction("test", {
+  url: "localhost",
+  name: "db-local",
+  port: 5432,
+});
+
+interface Quiz {
+  name: string;
+  type: string;
+}
+
+interface Course {
+  name: string;
+  author: string;
+  subject: string;
+}
+
+const sellable: Sellable<Quiz> = new Sellable();
+
+const quiz1: Quiz = {
+  name: "Quiz 1",
+  type: "Programming",
+};
+
+sellable.addToCart(quiz1);
